@@ -1,5 +1,5 @@
 import {NextRequest, NextResponse} from "next/server"
-const stripe = require("stripe")(process.env.NEXT_PUBLIC_STRIPE_SECRET)
+const stripe = require("stripe")(process.env.STRIPE_SECRET)
 
 export async function POST(req: NextRequest) {
   try {
@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amount * 100,
       currency: "usd",
-      automatic_payment_methods: {enabled: true}
+      payment_method_types: ["card"]
     })
 
     return NextResponse.json({clientSecret: paymentIntent.client_secret})
