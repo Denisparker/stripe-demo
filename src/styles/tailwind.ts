@@ -28,6 +28,7 @@ const config: Config = {
       "DEFAULT": "230ms"
     },
     safelist: [
+      ["overflow-hidden"],
       {
         pattern: /(bg|fill|stroke|text|border|outline)-(transparent|black|white|dark|light|grey|darkGrey|lightGrey|primary|success|warning|error)/
       }

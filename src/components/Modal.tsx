@@ -52,7 +52,13 @@ export default function Modal({
   })
 
   useEffect(() => {
-      isOpened && setOpened(isOpened)
+    const root = document.getElementsByTagName("html")[0]
+    isOpened && setOpened(isOpened)
+    if (isOpened) {
+      root.classList.add("overflow-hidden")
+    } else {
+      root.classList.remove("overflow-hidden")
+    }
   }, [isOpened])
 
   return mounted ? createPortal( (
@@ -62,16 +68,18 @@ export default function Modal({
             <div className="fixed z-50 w-screen h-screen top-0 left-0">
               <a.div style={spring} className="absolute backdrop-blur w-full h-full "/>
               <div className="absolute w-full h-full flex justify-end items-center pr-20">
-                <a.div style={style} className="relative bg-gray shadow-2xl rounded-xl p-20 overflow-y-auto scrollbar-hide  max-w-[96vw]">
-                  {children}
+                <a.div style={style} className="relative bg-gray shadow-2xl rounded-xl max-h-[96vh] max-w-[96vw]">
                   {!!onClose && (
                     <div onClick={() => {
                       setOpened(false)
                       onClose()
-                    }} className="absolute group cursor-pointer top-4 right-4 w-4 h-4">
+                    }} className="absolute z-20 group cursor-pointer top-4 right-4 w-4 h-4">
                       <Cross className="group-hover:fill-white/50 transition"/>
                     </div>
                   )}
+                  <div className="relative overflow-y-auto h-full max-h-[inherit] scrollbar-hide p-20">
+                    {children}
+                  </div>
                 </a.div>
               </div>
             </div>
