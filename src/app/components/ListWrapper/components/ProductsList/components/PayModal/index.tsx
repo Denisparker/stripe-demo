@@ -1,13 +1,8 @@
-import {PaymentElement, useElements, useStripe} from "@stripe/react-stripe-js"
-import {createPaymentIntent} from "api/payment"
 import CheckoutForm
   from "app/components/ListWrapper/components/ProductsList/components/PayModal/components/CheckoutForm"
-import Loading from "app/loading"
 import Crown from "assets/Crown"
-import Success from "assets/Success"
 import Modal from "components/Modal"
 import Image from "next/image"
-import {useEffect, useState} from "react"
 import {Product} from "types/product"
 
 interface I {
@@ -25,7 +20,7 @@ export default function PayModal({
       {data && (
         <>
           <div
-            className="relative bg-gray overflow-y-auto flex gap-10 items-center cursor-pointer select-none rounded-2xl p-4 mb-10">
+            className="relative bg-gray overflow-y-auto flex gap-10 items-center rounded-2xl p-4 mb-10">
             <Image src={data.img.src} alt="cookie" width={data.img.width} height={data.img.height}
               className="w-40 h-40 relative"
             />

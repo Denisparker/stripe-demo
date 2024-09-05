@@ -1,6 +1,5 @@
 "use client"
 
-import {loadStripe} from "@stripe/stripe-js"
 import PayModal from "./components/PayModal"
 import {useEffect, useState} from "react"
 import {Product} from "types/product"
