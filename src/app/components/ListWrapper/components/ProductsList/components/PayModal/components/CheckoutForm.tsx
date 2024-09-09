@@ -59,7 +59,7 @@ function FormRaw({data, clientSecret}: I & {clientSecret: string}) {
   }
 
   return (
-    <div className="relative h-[360px] flex items-center justify-center">
+    <div className="relative h-[360px] sm:h-full sm:pb-28 flex items-center justify-center">
       <div className={cn("w-full z-20", {"opacity-0 pointer-events-none": state !== "payment"})}>
         <PaymentElement
           options={{
@@ -67,7 +67,12 @@ function FormRaw({data, clientSecret}: I & {clientSecret: string}) {
             layout: "auto"
           }}
         />
-        <div className="w-full flex items-center justify-end mt-10">
+        <div className="w-full flex items-end justify-between mt-10">
+          <a target="_blank" href="https://docs.stripe.com/testing#cards">
+            <button className="py-3 px-5 bg-black/30 rounded-md transition hover:bg-black/20">
+              Testing details
+            </button>
+          </a>
           <button onClick={handleSubmit} className="py-5 px-10 bg-black/50 rounded-2xl transition hover:bg-black/20">
             {`Pay ${data.price}$`}
           </button>

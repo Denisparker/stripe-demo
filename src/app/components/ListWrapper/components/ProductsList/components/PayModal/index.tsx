@@ -20,7 +20,7 @@ export default function PayModal({
       {data && (
         <>
           <div
-            className="relative bg-gray overflow-y-auto flex gap-10 items-center rounded-2xl p-4 mb-10">
+            className="relative bg-gray overflow-y-auto sm:mt-10 flex gap-10 items-center rounded-2xl p-4 mb-10">
             <Image src={data.img.src} alt="cookie" width={data.img.width} height={data.img.height}
               className="w-40 h-40 relative"
             />

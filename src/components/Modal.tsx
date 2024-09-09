@@ -67,8 +67,8 @@ export default function Modal({
           opened && (
             <div className="fixed z-50 w-screen h-screen top-0 left-0">
               <a.div style={spring} className="absolute backdrop-blur w-full h-full "/>
-              <div className="absolute w-full h-full flex justify-end items-center pr-20">
-                <a.div style={style} className="relative bg-gray shadow-2xl rounded-xl max-h-[96vh] max-w-[96vw]">
+              <div className="absolute w-full h-full flex justify-end items-center sm:pr-0 sm:justify-center pr-20">
+                <a.div style={style} className="relative bg-gray shadow-2xl rounded-xl max-h-[96vh] sm:max-h-[85vh] max-w-[96vw]">
                   {!!onClose && (
                     <div onClick={() => {
                       setOpened(false)
@@ -77,7 +77,7 @@ export default function Modal({
                       <Cross className="group-hover:fill-white/50 transition"/>
                     </div>
                   )}
-                  <div className="relative overflow-y-auto h-full max-h-[inherit] scrollbar-hide p-20">
+                  <div className="relative overflow-y-auto h-full max-h-[inherit] sm:p-4 scrollbar-hide p-20">
                     {children}
                   </div>
                 </a.div>

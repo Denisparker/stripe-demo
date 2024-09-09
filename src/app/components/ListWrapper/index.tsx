@@ -10,7 +10,7 @@ export default async function ListWrapper() {
   const productsArr = await getProducts()
 
   return (
-    <div className="grid grid-cols-3 gap-x-20 gap-y-24">
+    <div className="grid grid-cols-3 sm:grid-cols-1 sm:px-10 gap-x-20 gap-y-24">
       <ProductsList products={productsArr}/>
     </div>
   )
