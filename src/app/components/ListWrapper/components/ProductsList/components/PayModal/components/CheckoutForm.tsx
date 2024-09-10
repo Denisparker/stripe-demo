@@ -69,11 +69,11 @@ function FormRaw({data, clientSecret}: I & {clientSecret: string}) {
         />
         <div className="w-full flex items-end justify-between mt-10">
           <a target="_blank" href="https://docs.stripe.com/testing#cards">
-            <button className="py-3 px-5 bg-black/30 rounded-md transition hover:bg-black/20">
+            <button className="py-3 px-5 bg-black/30 rounded-xl transition hover:bg-black/20">
               Testing details
             </button>
           </a>
-          <button onClick={handleSubmit} className="py-5 px-10 bg-black/50 rounded-2xl transition hover:bg-black/20">
+          <button onClick={handleSubmit} className="py-5 px-10 bg-black/50 rounded-xl transition hover:bg-black/20">
             {`Pay ${data.price}$`}
           </button>
         </div>
